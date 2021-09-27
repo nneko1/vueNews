@@ -1,0 +1,30 @@
+<template>
+  <div>
+    News
+  </div>
+</template>
+
+<script>
+import axios from "axios"
+
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  created() {
+    axios.get("https://api.hnpwa.com/v0/news/1.json")
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}
+</script>
+
+<style>
+
+</style>
